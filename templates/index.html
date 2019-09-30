@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MAC Adder</title>
+	<link rel="stylesheet" href="/static/bootstrap.min.css" type="text/css">
+    <link href="/static/floating-labels.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="bg-light justify-content-center">
+	<div class="container">
+		<div class="container row justify-content-center">
+			<form method="post">
+				<div class="container text-center">
+					<div class="py-5 text-center">
+						<h2>MAC Address Whitelist tool</h2>
+						<p class="lead">Please input a list of MAC addresses to add to/remove from the Cisco & UniFi whitelists</p>
+						<p>Each byte should be colon separated, and each address should be on a new line</p>
+						<h5>Example</h5>
+						<p>00:11:22:33:44:55<br>00:12:34:56:78:90<br>etc.</p>
+					</div>
+					{% if result %}
+						<p class="text-danger">{{ result }}</p>
+						{% if error %}
+							<h2>Error Type</h2>
+							<p>{{ error[0] }}</p>
+							<h2>Error Value</h2>
+							<p>{{ error[1] }}</p>
+							<h2>Error Traceback</h2>
+							<p>{{ error[2] }}</p>
+						{% endif %}
+					{% endif %}
+					<div class="form-group">
+						<label for="controlTextArea">Enter MAC Addresses</label>
+						<textarea class="form-control" id="controlTextArea" name="macs" rows="6"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="action">Add or remove?</label>
+						<select class="form-control" id="action" name="action">
+							<option>Add</option>
+							<option>Remove</option>
+						</select>
+					</div>
+					<button type="submit" class="btn btn-primary text-center">Submit</button>
+				</div>
+			</form>
+		</div>
+		<div class="container row justify-content-center"><br></div>
+		<div class="container row justify-content-center">
+			<form action="/logout">
+				<div class="container text-center justify-content-center">
+					<button type="submit" class="btn btn-danger">Logout</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
