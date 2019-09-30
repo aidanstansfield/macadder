@@ -21,10 +21,10 @@ A step by step series of examples that tell you how to get it up and running.
 
 #### Edit Source
 First, you need to edit the source code to suit your environment.
-##### Configuration
-All configuration variables can be found in `config.py`. Edit these to suit.
-##### Authentication
-If you don't want to use LDAP Authentication, then change the `auth` function in `app.py` to suit your desires.
+* **Configuration** - All configuration variables can be found in `config.py`. Edit these to suit.
+* **Authentication** - If you don't want to use LDAP Authentication, then change the `auth` function in `app.py` to suit your desires.
+
+Once you have edited the source code to suit your environment, we can build and run the application.
 
 #### For Docker:
 
