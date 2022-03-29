@@ -1,5 +1,5 @@
 Flask==1.0.3
-paramiko==2.5.0
+paramiko==2.10.1
 python-ldap==3.2.0
 pyunifi==2.16
 gunicorn==19.9.0
